@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700");
+
+:root {
+    --couleur-principale: #43B581;
+    --couleur-secondaire: #ed4147;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--couleur-principale);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #36393F;
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1d1f25;
+    padding: 20px 0;
+    display:  flex;
+    align-items: center;
+    border-bottom: 5px solid var(--couleur-principale);
+    justify-content: space-between;
+    height: 110px;
+}
+
+.header h1 {
+    font-size: 50px;
+    margin-left: 40px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.nav li {
+    margin: 0 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.active {
+    border-bottom: 3px solid var(--couleur-principale);
+}
+
+.nav a:hover {
+    border-bottom: 3px solid var(--couleur-principale);
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #1d1f25;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    border-top: 5px solid var(--couleur-principale);
+}
+
+.icons {
+    position: relative;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.icons i {
+    margin: 0 10px;
+}
+
+.icons i:hover {
+    color: var(--couleur-secondaire);
+    border-radius: 50%;
+}
+
+.copy {
+    color: var(--couleur-principale);
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: -50px;
+}
+
+.enabled span:nth-child(1) {
+    transform: rotate(45deg) translate(7.5px, 9px);
+    transition: transform 0.5s;
+}
+
+.enabled span:nth-child(2) {
+    opacity: 0;
+}
+
+.enabled span:nth-child(3) {
+    transform: rotate(-45deg) translate(7.5px, -9px); 
+    transition: transform 0.5s;
+}
+
+.disabled span:nth-child(1) {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
+
+.disabled span:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: transform 0.5s;
+}
+
+.disabled span:nth-child(3) {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
+
+.activated::before {
+    height: 200px;
+}
+
+.container {
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px 40px 60px;
+    align-items: center;
+    height: 475px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    background-color: #2F3139;
+    padding: 18px;
+    margin: 10px auto;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-6,
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+h3 {
+    text-align: left;
+    font-size: 30px
+}
+
+.p {
+    margin-top: 12px;
+}
+
+.copyr {
+    font-size: 12px;
+    margin-top: 19px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+
+    .hamburger {
+        position: fixed;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 100px;
+        margin-bottom: 35px
+    }
+
+    .hamburger span {
+        position: absolute;
+        display: flex;
+        margin: 5px auto;
+        width: 50px;
+        height: 5px;
+        background-color: var(--couleur-principale);
+        transition: display 0.5s;
+    }
+      
+    .hamburger span:nth-child(1) {
+        top: 0;
+        left: 0;
+    }
+      
+    .hamburger span:nth-child(2) {
+        top: 12px;
+        left: 0;
+    }
+      
+    .hamburger span:nth-child(3) {
+        top: 24px;
+        left: 0;
+    }
+
+    .header .hamburger:hover span, .header .hamburger:focus span {
+  background-color: var(--couleur-secondaire);
+    }
+
+    .container {
+        overflow-y: scroll;
+    }
+
+    .container::-webkit-scrollbar {
+        background-color: #2F3139;
+        border-radius: 10px;
+    }
+    
+    .container::-webkit-scrollbar-thumb {
+        background-color: var(--couleur-principale);
+        border-radius: 10px;
+    }
+}
